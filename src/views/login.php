@@ -47,6 +47,5 @@
                 </div>
             </div>
         </form>
-        <?= $text ?>
     </body>
 </html>
