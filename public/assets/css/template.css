@@ -2,21 +2,21 @@ body {
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: 64px 1fr 64px;
-    grid-template-areas: 
+    grid-template-areas:
         "header header"
         "sidebar content"
         "sidebar footer";
     height: 100vh;
-    margin: 0;
+    margin: 0px;
     background-color: #DDD;
 }
 
 body.hide-sidebar {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         "header"
         "content"
-        "footer";
+        "footer"
 }
 
 header.header {
@@ -25,25 +25,30 @@ header.header {
     background-color: #1976d2;
     align-items: center;
     z-index: 10;
-    box-shadow: 
+    box-shadow:
         0 2px 4px -1px rgba(0, 0, 0, .2),
-        0 4px 4px 0px rgba(0, 0, 0, .14),
-        0 1px 10px 0px rgba(0, 0, 0, .12);
+        0 2px 4px -1px rgba(0, 0, 0, .2),
+        0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+header.header .menu-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 48px;
+    font-size: 1.4rem;
+    color: white;
+    cursor: pointer;
 }
 
 header.header .logo {
     display: flex;
-    justify-content: center;
+    margin-left: 10px;
     align-items: center;
     color: white;
-    font-size: 2rem;
-    flex-basis: 250px;
-    height: 100%;
-}
-
-header.header .menu-toggle {
-    color: white;
-    cursor: pointer;
+    font-size: 1.8rem;
+    flex-basis: 202px;
+    height: 64px;
 }
 
 header.header .spacer {
@@ -73,6 +78,7 @@ header.header .dropdown-content {
     padding: 15px 0px;
     z-index: 100;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, .2);
+    border-radius: 5px;
 }
 
 header.header .dropdown:hover .dropdown-content {
@@ -102,19 +108,13 @@ header.header .dropdown:hover {
     background-color: rgba(0, 0, 0, .1);
 }
 
-header.header .avatar {
-    height: 75%;
-    border-radius: 50%;
-    margin-left: 10px;
-}
-
 aside.sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-area: sidebar;
     box-shadow: -5px 0px 25px 1px rgba(0, 0, 0, 0.4);
-    background-color: #FFF;
+    background-color: white;
 }
 
 aside.sidebar .menu {
@@ -130,13 +130,12 @@ aside.sidebar .menu ul.nav-list {
 
 aside.sidebar .menu li.nav-item {
     margin: 0;
-    padding: 10px 10px 10px 25px;
+    padding: 10px 0px 10px 25px;
 }
 
 aside.sidebar .menu li.nav-item:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
-
 
 aside.sidebar .menu li.nav-item a {
     font-size: 1.2rem;
@@ -170,11 +169,6 @@ aside.sidebar .sidebar-widget .info {
     flex: 1;
 }
 
-.division {
-    widows: 80%;
-    border: solid 1px #EEE;
-}
-
 aside.sidebar .info .main {
     font-size: 2rem;
 }
@@ -191,7 +185,7 @@ main.content {
 main.content .content-title {
     display: flex;
     align-items: center;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #CCC;
 }
 
@@ -204,13 +198,23 @@ main.content .content-title h1 {
     font-size: 1.8rem;
     font-weight: 300;
     margin: 0;
+    
 }
 
 main.content .content-title h2 {
-    color: #888;
+    color: #999;
     font-size: 1.2rem;
     font-weight: 300;
     margin: 0;
+}
+
+.division {
+    widows: 80%;
+    border: solid 1px #EEE; 
+}
+
+main.content {
+    grid-area: content;
 }
 
 footer.footer {
@@ -221,39 +225,10 @@ footer.footer {
     font-size: 1.2rem;
     grid-area: footer;
     background-color: #222;
-    color: #FFF;
-}
-
-.record {
-    font-size: 2.2rem;
-}
-
-.summary-boxes {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.summary-box {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    min-width: 200px;
+
 }
 
-.summary-box .icon {
-    font-size: 3.5rem;
-}
-
-.summary-box .title {
-    font-size: 1.5rem;
-}
-
-.summary-box .value {
-    font-size: 2rem;
+.records {
+    font-size: 2.2rem;
 }
