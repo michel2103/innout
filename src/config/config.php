@@ -19,6 +19,7 @@ require_once(realPath(dirName(__FILE__) . '/database.php'));
 require_once(realPath(dirName(__FILE__) . '/loader.php'));
 require_once(realPath(dirName(__FILE__) . '/session.php'));
 require_once(realPath(dirName(__FILE__) . '/date_utils.php'));
+require_once(realPath(dirName(__FILE__) . '/utils.php'));
 //Files in another location
 require_once(realPath(MODEL_PATH . '/Model.php'));
 require_once(realPath(MODEL_PATH . '/User.php'));

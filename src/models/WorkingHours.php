@@ -38,7 +38,7 @@
         public function innout($time) {
             $timeColumn = $this->getNextTime();
             if(!$timeColumn) {
-                throw new AppException("Você já realizou os quatro batimentos do dia!");
+                throw new AppException('Você já realizou os quatro batimentos do dia!');
             }
 
             $this->$timeColumn = $time;
